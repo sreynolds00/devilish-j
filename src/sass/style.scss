@@ -1,0 +1,145 @@
+$primary-color: rgb(27, 27, 27);
+$secondary-color: rgb(48, 38, 134);
+$text-color: white;
+$background-color: white;
+
+
+@mixin tablet{
+    @media only screen and (min-width: 768px){
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media only screen and (min-width: 1440px){
+        @content;
+    }
+}
+
+@mixin flex-centre($direction) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $direction;
+    flex-wrap: wrap;
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: $background-color;
+    color: $text-color;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    @include desktop(){
+        font-size: 20px;
+    }
+}
+a{
+    text-decoration: none;
+    &:visited{
+        color: white;
+    }
+}
+.text-highlight{
+    font-weight: 700;
+}
+
+
+header{
+    background: $primary-color;
+    width: 100%;
+    @include flex-centre(row);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    padding: 0.4rem;
+    nav{
+        display: none;
+        @include tablet(){
+            display: block;
+            .menu-nav{
+                padding-right: 1rem;
+                &__item{
+                    display: inline;
+                    padding: 0 0.4rem;
+                }
+            }
+        }
+    }
+    .social-icons a{
+        padding: 0 0.4rem;
+    }
+}
+section{
+    @include flex-centre(column);
+    width:100%;
+    padding: 1rem;
+}
+.solid-background{
+    background: $primary-color;
+}
+
+
+.container{
+    @include flex-centre(column);
+    margin: auto;
+}
+.wrapper{
+    @include flex-centre(column);
+    @include tablet(){
+        @include flex-centre(row)
+    }
+    margin: auto; 
+    
+}
+
+.home{
+    background-image: url("concert.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 0;
+    min-height: 100vh;
+    &::after{
+        content:"";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background:linear-gradient(rgba(0, 0, 0, 0.3), black);
+    } 
+    .home-heading{
+        font-size: 3em;
+        font-weight: 400;
+    }
+    h1, p{
+        z-index: 1;
+    }
+}
+.new-release{
+    padding-top: 3rem;
+    .new-album{
+        width: Max(18rem,30vw);
+        height: Max(18rem,30vw);
+    }
+    &__text{
+        font-weight: 400;
+        padding-top: 1rem;
+        @include tablet{
+            padding-left: 6rem;
+        }
+    }
+}
+
+
+
+footer{
+    background: $primary-color;
+    padding: 1rem;
+}
