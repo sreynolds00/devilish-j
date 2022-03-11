@@ -1,0 +1,41 @@
+$primary-color: rgb(8, 8, 8);
+$secondary-color: rgb(255, 79, 79);
+$container-color: rgb(59, 59, 59);
+$text-color: white;
+$background-color: white;
+
+@mixin tablet{
+    @media only screen and (min-width: 768px){
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media only screen and (min-width: 1440px){
+        @content;
+    }
+}
+
+@mixin flex-centre($direction) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $direction;
+    flex-wrap: wrap;
+}
+@mixin drop-shadow{
+    filter: drop-shadow(0 0 15px rgba(0,0,0,0.7))
+}
+@mixin box-shadow{
+    box-shadow:0 0 15px 25px rgba(0,0,0,0.1);
+}
+@mixin header-rule($rule-color){
+    content:"";
+    border-top: 1px solid $rule-color;
+    width: 100%;
+    margin-top: 0.5rem;
+    display: block;
+}
+@mixin transition-ease{
+    transition: 300ms ease;
+}
