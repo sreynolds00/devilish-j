@@ -3,6 +3,10 @@ $secondary-color: rgb(255, 79, 79);
 $container-color: rgb(59, 59, 59);
 $text-color: white;
 $background-color: white;
+@font-face {
+    font-family: Spotify;
+    src: url(../assets/GothamMedium.ttf);
+  }
 
 @mixin tablet{
     @media only screen and (min-width: 768px){
@@ -29,6 +33,12 @@ $background-color: white;
 @mixin box-shadow{
     box-shadow:0 0 15px 25px rgba(0,0,0,0.1);
 }
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+  }
+@function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
+  }
 @mixin header-rule($rule-color){
     content:"";
     border-top: 1px solid $rule-color;

@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body class="vertical-scroll">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -82,6 +82,8 @@
          MAIN
 ---------------------->
 
+<!--HOME-->
+
     <main>
         <div class="home-background"></div>
         <section class="home">
@@ -92,6 +94,9 @@
                 <p>Songwriter, Rapper</p>
             </div>    
         </section>
+
+<!--BIO-->
+
         <section class="quote solid-background">
             <div class="wrapper">
                 <img src="assets/snoopdog2.jpg" alt="Jacob Creighton" class="portrait-image">
@@ -103,9 +108,12 @@
                     </div>
             </div>
         </section>
+
+<!--NEW_RELEASE-->
+
         <section class="new-release solid-background">
             <div class="wrapper">
-                <img class = "new-album" src="assets/encore.jpg" alt="New album Cover">
+                <img class = "new-album" src="assets/rap-album.jpg" alt="New album Cover">
                 <div class="new-release__text">
                     <h2 class=""> newest release</h2>
                     <div class="new-release__button">
@@ -113,6 +121,15 @@
                     </div>
                 </div>            
            </div>
+        </section>
+
+<!--DISCOGRAPHY-->
+
+        <section class="discography solid-background">
+            <h2 class="discography__title">Discography</h2>
+            <div id="discography__grid" class="horizontal-scroll">
+                <!--DISCOGRAPHY ITEMS + CAPTIONS ARE INSERTED VIA JAVASCRIPT-->
+            </div>
         </section>
 
     </main>
@@ -141,6 +158,6 @@
 
 
         <script src="https://kit.fontawesome.com/e819e02bc8.js" crossorigin="anonymous"></script>
-        <script src="" async defer></script>
+        <script src="index.js" async defer></script>
     </body>
 </html>
