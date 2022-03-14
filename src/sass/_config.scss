@@ -3,6 +3,7 @@ $secondary-color: rgb(255, 79, 79);
 $container-color: rgb(59, 59, 59);
 $text-color: white;
 $background-color: white;
+$serif: "Playfair-Display";
 @font-face {
     font-family: Spotify;
     src: url(../assets/GothamMedium.ttf);
@@ -44,6 +45,15 @@ $background-color: white;
     border-top: 1px solid $rule-color;
     width: 100%;
     margin-top: 0.5rem;
+    display: block;
+}
+@mixin image-underlayer($underlayer-color){
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: $underlayer-color;
+    transform: translate(-10px, 10px);
+    position: absolute;
     display: block;
 }
 @mixin transition-ease{

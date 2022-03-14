@@ -42,7 +42,7 @@ p{
 }
 .text-novelty{
     font-family: "Lobster", cursive;
-    letter-spacing: 2px;
+    letter-spacing: 0.04em;
 }
 .vertical-scroll{
     &::-webkit-scrollbar{
@@ -96,21 +96,31 @@ header{
     nav{
         display: none;
         @include tablet(){
-            .active{
-                font-weight: 600;
+            #active{
+                font-weight: 600;              
             }
             display: block;
             .menu-nav{
                 padding-right: 1rem;
+                #header-title{
+                    font-size: 2rem;
+                    color: $text-color;
+                    margin: 0 2rem;
+                    a{
+                        cursor: default;
+
+                    }
+                }
                 &__item{
                     display: inline;
                     padding: 0 0.4rem;
                     position: relative;
+                    color: tint($secondary-color,20%);
                     .menu-nav__item-rule{
                         content: "";
                         position: absolute;
                         width: 0;
-                        border-top: 1px solid $secondary-color;
+                        border-top: 1px solid $text-color;
                         top:110%;
                         left:0;
                         z-index: 1;
@@ -122,23 +132,14 @@ header{
                 }
             }
         }
-    }
-    .social-icons a{
-        padding: 0 0.4rem;
-    }
-    .social-icons i{
-        @include drop-shadow;
-        @include transition-ease;
-        &:hover{
-            color: $secondary-color;
-        }
-    }
+    }   
 }
 .menu-nav__item:hover{
     .menu-nav__item-rule{
         width: 100%;
     }
 }
+
 
 // MAIN //
 
@@ -165,14 +166,15 @@ section{
 .container{
     @include flex-centre(column);
     margin: auto;
+    position: relative;
 }
 .wrapper{
     @include flex-centre(column);
     @include tablet(){
-        @include flex-centre(row)
+        @include flex-centre(row);
     }
     margin: auto; 
-    
+    position:relative;  
 }
 
 // FOOTER //
